@@ -55,7 +55,9 @@ while is_running:
         print(play_name + " V/s " + comp_play_name)
 
         # Who is the WINNER?
-        if((play == 1 and comp_play == 2) or
+        if play == comp_play:
+            print(f"User and Computer selected {play_name}. It's a tie!")
+        elif((play == 1 and comp_play == 2) or
                 (play == 2 and comp_play == 1)):
             print("Paper wins => ", end="")
             result = "Paper"
