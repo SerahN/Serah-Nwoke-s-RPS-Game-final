@@ -25,9 +25,6 @@ while is_running:
         playlist = ['R', 'P', 'S']
         play = str(input("User play: "))
 
-        # while play > 3 or play < 1:
-        #     play = int(input("enter valid input: "))
-
         if play == 'R':
             play_name = 'Rock'
         elif play == 'P':
