@@ -34,6 +34,9 @@ while is_running:
             play_name = 'Paper'
         elif play == 'S':
             play_name = 'Scissors'
+        else:
+            print("Invalid User Play")
+            continue
 
         print("User play is: " + play_name)
         print("\nNow its computer turn to play, please wait...")
