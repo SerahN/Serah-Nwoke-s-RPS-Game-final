@@ -21,33 +21,34 @@ while is_running:
         print("Serah's Game of RPS Refreshed")
 
         # Accept user play
-        print("Make your play: \n 1 for Rock, \n 2 for Paper, and \n 3 for Scissors \n")
-        play = int(input("User play: "))
+        print("Make your play: \n 'R' for Rock, \n 'P' for Paper, and \n 'S' for Scissors \n")
+        playlist = ['R', 'P', 'S']
+        play = str(input("User play: "))
 
-        while play > 3 or play < 1:
-            play = int(input("enter valid input: "))
+        # while play > 3 or play < 1:
+        #     play = int(input("enter valid input: "))
 
-        if play == 1:
+        if play == 'R':
             play_name = 'Rock'
-        elif play == 2:
+        elif play == 'P':
             play_name = 'Paper'
-        else:
+        elif play == 'S':
             play_name = 'Scissors'
 
         print("User play is: " + play_name)
         print("\nNow its computer turn to play, please wait...")
 
-        # Computer chooses a random number/ game play
-        comp_play = random.randint(1, 3)
+        # Computer chooses a random game play
+        comp_play = random.choice(playlist)
 
-        while comp_play == play:
-            comp_play = random.randint(1, 3)
+        while comp_play == play: 
+            comp_play = random.choice(playlist)
 
-        if comp_play == 1:
+        if comp_play == 'R':
             comp_play_name = 'Rock'
-        elif comp_play == 2:
+        elif comp_play == 'P':
             comp_play_name = 'Paper'
-        else:
+        elif comp_play == 'S':
             comp_play_name = 'Scissors'
 
         print("Computer play is: " + comp_play_name)
@@ -56,22 +57,18 @@ while is_running:
 
         # Who is the WINNER?
         if play == comp_play:
-<<<<<<< HEAD
             print(f"User and Computer selected {play_name}. It's a tie!")
-        elif((play == 1 and comp_play == 2) or
-=======
-            print("\nUser and Computer played {play_name}. It's a tie!")
-        if((play == 1 and comp_play == 2) or
->>>>>>> 7d2c670f8ff69bfc8d69c936e62f221ada61e024
-                (play == 2 and comp_play == 1)):
+        elif((play == 'R' and comp_play == 'P') or
+                (play == 'P' and comp_play == 'R')):
             print("Paper wins => ", end="")
             result = "Paper"
 
-        elif((play == 1 and comp_play == 3) or
-             (play == 3 and comp_play == 1)):
+        elif((play == 'R' and comp_play == 'S') or
+             (play == 'S' and comp_play == 'R')):
             print("Rock wins =>", end="")
             result = "Rock"
-        else:
+        elif((play == 'P' and comp_play == 'S') or
+             (play == 'S' and comp_play == 'P')):
             print("Scissors wins =>", end="")
             result = "Scissors"
 
